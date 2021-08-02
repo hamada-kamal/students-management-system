@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+	
+
+{% block body %}
+
+
+    <div class="container text-center">
+        <div class="materials-title" style="margin: 100px auto;">
+        <h1 class="title">{{subject}} Materials</h1>
+        </div>
+
+        <div class="row mt-5" style="height: 400px;">
+            <div class="col-lg-4 col-md-4 p-2 col-sm-12 m-5">
+                <div class="list-group text-center">
+					<a data-toggle="collapse" href="#x1" class="list-group-item list-group-item-action bg-warning">
+					  Lectures					</a>
+					<div class="collapse" id="x1">
+                        {% for lecture in lectures %}              
+                        <li style="text-align: left;" class="list-group-item list-group-item-light">{{lecture}} <a style="  color: green;background: none;float: right;margin: -3px;" class="download_lec" href="{{lecture.adminupload.url}}" download="{{lecture.adminupload.url}}" > <i class="fas fa-download"></i></a></li>
+                        {% empty %}
+                        <li class="list-group-item list-group-item-danger">There is no lecture yet</li>                            
+                        {% endfor %}
+                    </div>
+				  </div> 
+            </div>            
+            <div class="col-lg-4 col-md-4 p-2 col-sm-12 m-5">
+                <div class="list-group text-center">
+					<a data-toggle="collapse" href="#x2" class="list-group-item list-group-item-action bg-warning">
+					  Sections
+					</a>
+					<div class="collapse" id="x2">
+                        {% for section in sections %}
+                    
+                        <li style="text-align: left;" class="list-group-item list-group-item-light">{{section}} <a style="  color: green;background: none;float: right;margin: -3px;" class="download_lec" href="{{lecture.adminupload.url}}" download="{{lecture.adminupload.url}}" > <i class="fas fa-download"></i></a></li>
+                        {% empty %}
+                        <li class="list-group-item list-group-item-danger">There is no lecture yet</li>
+                            
+                        {% endfor %}					</div>
+				  </div>
+            </div>            
+            <div class="col-lg-4 col-md-4 p-2 col-sm-12 m-5">
+                <div class="list-group text-center">
+					<a data-toggle="collapse" href="#x3" class="list-group-item list-group-item-action bg-warning">
+					  Labs
+					</a>
+					<div class="collapse" id="x3">
+                        {% for lab in labs %}
+                    
+                        <li style="text-align: left;" class="list-group-item list-group-item-light">{{lab}} <a style="  color: green;background: none;float: right;margin: -3px;" class="download_lec" href="{{lecture.adminupload.url}}" download="{{lecture.adminupload.url}}" ><i class="fas fa-download"></i></a></li>
+                        {% empty %}
+                        <li class="list-group-item list-group-item-danger">There is no lecture yet</li>
+                            
+                        {% endfor %}					</div>
+				  </div>
+            </div>            
+        </div>            
+        <!-- <div class="row text-center">
+            <div class="col-lg-6 col-md-12 mb-4 mb-md-0 text-center">
+
+            
+            <div class="list-group lecture">
+                {% for lecture in lectures %}
+                <h2 class="list-group-item list-group-item-action list-group-item-info">{{lecture.title}}<a href="{{lecture.adminupload.url}}" download="{{lecture.adminupload.url}}" >Download <span><i class="fas fa-download"></i></span></a>
+                </h2>
+                {% empty %}
+                <h2 class="list-group-item list-group-item-action list-group-item-danger">There are no lectures yet.</h2>
+                {% endfor %}
+            </div>
+        
+        
+            </div>
+        </div> -->
+    
+    </div>
+
+{% endblock body %}

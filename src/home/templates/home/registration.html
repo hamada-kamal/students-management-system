@@ -1,0 +1,235 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block body %}
+<section class="level">
+  <div class="container">
+
+      <div class="row">
+        <div id="formContent">
+          <form method="POST">
+          {% csrf_token %}
+          <div class="form-group">
+            <input style="background: #FFF;" class="form-control" name="code" id="code" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject code'" placeholder = 'Enter Subject code'>
+          </div>
+          {{form|crispy}}
+            <input class="form_btn form-control" type="submit" value="Add" />
+          </form>
+          <table class="table table-striped table-dark">
+            <thead>
+              <tr>
+                <th class="panner" scope="col">Primary Level Semester 1</th>
+                <th class="panner" scope="col"></th>
+              </tr>
+              <tr>
+                <th scope="col">subject</th>
+                <th scope="col">code</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for subject in primary_subject_s1 %}
+                <tr>
+                  <td>{{subject}}</td>
+                  <td>{{subject.code}}</td>
+                </tr>
+                <tr>
+              {% endfor %}
+            </tbody>
+          <table class="table table-striped table-dark">
+            <thead>
+              <tr>
+                <th class="panner" scope="col">Primary Level Semester 2</th>
+                <th class="panner" scope="col"></th>
+              </tr>
+              <tr>
+                <th scope="col">subject</th>
+                <th scope="col">code</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for subject in primary_subject_s2 %}
+                <tr>
+                  <td>{{subject}}</td>
+                  <td>{{subject.code}}</td>
+                </tr>
+                <tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          <table class="table table-striped table-dark">
+            <thead>
+              <tr>
+                <th class="panner" scope="col">Level One Semester 1</th>
+                <th class="panner" scope="col"></th>
+              </tr>
+              <tr>
+                <th scope="col">subject</th>
+                <th scope="col">code</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for subject in level_one_subject_s1 %}
+                <tr>
+                  <td>{{subject}}</td>
+                  <td>{{subject.code}}</td>
+                </tr>
+                <tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          <table class="table table-striped table-dark">
+            <thead>
+              <tr>
+                <th class="panner" scope="col">Level One Semester 2</th>
+                <th class="panner" scope="col"></th>
+              </tr>
+              <tr>
+                <th scope="col">subject</th>
+                <th scope="col">code</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for subject in level_one_subject_s2 %}
+                <tr>
+                  <td>{{subject}}</td>
+                  <td>{{subject.code}}</td>
+                </tr>
+                <tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          <table class="table table-striped table-dark">
+            <thead>
+              <tr>
+                <th class="panner" scope="col">Level Tow Semester 1</th>
+                <th class="panner" scope="col"></th>
+              </tr>
+              <tr>
+                <th scope="col">subject</th>
+                <th scope="col">code</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for subject in level_two_subject_s1 %}
+                <tr>
+                  <td>{{subject}}</td>
+                  <td>{{subject.code}}</td>
+                </tr>
+                <tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          <table class="table table-striped table-dark">
+            <thead>
+              <tr>
+                <th class="panner" scope="col">Level Tow Semester 2</th>
+                <th class="panner" scope="col"></th>
+              </tr>
+              <tr>
+                <th scope="col">subject</th>
+                <th scope="col">code</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for subject in level_two_subject_s2 %}
+                <tr>
+                  <td>{{subject}}</td>
+                  <td>{{subject.code}}</td>
+                </tr>
+                <tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          <table class="table table-striped table-dark">
+            <thead>
+              <tr>
+                <th class="panner" scope="col">Level Three Semester 1</th>
+                <th class="panner" scope="col"></th>
+              </tr>
+              <tr>
+                <th scope="col">subject</th>
+                <th scope="col">code</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for subject in level_three_subject_s1 %}
+                <tr>
+                  <td>{{subject}}</td>
+                  <td>{{subject.code}}</td>
+                </tr>
+                <tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          <table class="table table-striped table-dark">
+            <thead>
+              <tr>
+                <th class="panner" scope="col">Level Three Semester 2</th>
+                <th class="panner" scope="col"></th>
+              </tr>
+              <tr>
+                <th scope="col">subject</th>
+                <th scope="col">code</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for subject in level_three_subject_s2 %}
+                <tr>
+                  <td>{{subject}}</td>
+                  <td>{{subject.code}}</td>
+                </tr>
+                <tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          <table class="table table-striped table-dark">
+            <thead>
+              <tr>
+                <th class="panner" scope="col">Level Four Semester 1</th>
+                <th class="panner" scope="col"></th>
+              </tr>
+              <tr>
+                <th scope="col">subject</th>
+                <th scope="col">code</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for subject in level_four_subject_s1 %}
+                <tr>
+                  <td>{{subject}}</td>
+                  <td>{{subject.code}}</td>
+                </tr>
+                <tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          <table class="table table-striped table-dark">
+            <thead>
+              <tr>
+                <th class="panner" scope="col">Level Four Semester 2</th>
+                <th class="panner" scope="col"></th>
+              </tr>
+              <tr>
+                <th scope="col">subject</th>
+                <th scope="col">code</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for subject in level_four_subject_s2 %}
+                <tr>
+                  <td>{{subject}}</td>
+                  <td>{{subject.code}}</td>
+                </tr>
+                <tr>
+              {% endfor %}
+            </tbody>
+          </table>
+  </div>
+      </div>
+  </div>
+</section>
+
+ 
+
+{% endblock body %}

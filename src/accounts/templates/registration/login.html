@@ -1,0 +1,25 @@
+{% extends "base_generic.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div id="formContent">
+{% if next %}
+ {% if user.is_authenticated %}
+   <p>Your account doesn't have access to this page. To proceed,
+   please login with an account that has access.</p>
+ {% else %}
+   <p>Please login to see this page.</p>
+ {% endif %}
+{% endif %}
+
+<div id="formContent">
+  <form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    {{form|crispy}}
+    <input class="form_btn form-control" type="submit" value="login" />
+    <input type="hidden" name="next" value="{{ next }}" />
+   </form>
+</div>
+
+</div>
+
+{% endblock %}

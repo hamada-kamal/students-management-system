@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block body %}
+<section class="level">
+  <div class="container">
+
+      <div class="row">
+        <div class="col">
+             {% if register_instance.subjects.all %}                           
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">Subject</th>
+                    <th scope="col">Code</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for subject in register_instance.subjects.all %}
+                  <tr>
+                    <td>{{subject}}</td>
+                    <td>{{subject.code}}</td>
+                    <td>
+                        
+                      <button data-subject="{{subject.id}}" data-action="remove" class="btn btn-outline-secondary del-subject"><i class="fas fa-trash"></i></button>
+                    </td>
+                  </tr>
+                    
+                    {% endfor %}
+             
+                </tbody>
+              </table>  
+              {% else %}
+              <h1 style="color: #ec6d6d;">There is no registerd subjects</h1>
+              <a class="btn btn-success" style="font-size: 18px;color:#FFF" href="{% url 'home:registration' %}">Add subject</a>
+          {% endif %}
+        </div>
+      </div>
+  </div>
+</section>
+
+ 
+
+{% endblock body %}

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+	
+
+{% block body %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="section-title">
+            <h1 class="title">Choose Semester</h1>
+          </div>
+        <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+            <div class="list-group text-center">
+                <a data-toggle="collapse" href="#x1" class="list-group-item list-group-item-action drop_link">
+                  Semester 1
+                </a>
+                <div class="collapse" id="x1">
+                  {% for subject in subject_semester1 %}
+                  <a href="{{ subject.get_absolute_url }}" class="list-group-item list-group-item-action">{{subject}}</a>
+                  {% empty %}
+                  <ul class="list-group">
+                    <li class="list-group-item list-group-item-danger">No Subjects Yet.</li>
+                  </ul>                  
+                  {% endfor %}
+                </div>
+              </div>
+        </div>
+        <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+            <div class="list-group text-center">
+                <a data-toggle="collapse" href="#x2" class="list-group-item list-group-item-action drop_link">
+                    Semester 2
+                </a>
+                <div class="collapse" id="x2">
+                  {% for subject2 in subject_semester2 %}
+                  <a href="{{ subject2.get_absolute_url }}" class="list-group-item list-group-item-action">{{subject2}}</a>
+                  {% empty %}
+                  <ul class="list-group">
+                    <li class="list-group-item list-group-item-danger">No Subjects Yet.</li>
+                  </ul>
+                   {% endfor %}
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock body %}

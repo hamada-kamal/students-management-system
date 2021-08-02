@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+
+<div id="formContent">
+<form method='POST'>
+    <h2 style="margin: 30px 0px;"> SIgnup Form</h2>
+    {% csrf_token %}
+    {{form|crispy}}
+    <input class="form_btn form-control" type="submit" value="Signup">
+</form>
+</div>
+{% endblock %}

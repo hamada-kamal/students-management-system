@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+	
+
+{% block body %}
+  
+
+ 
+	<div id="fh5co-project">
+		<div class="container">
+		</div>
+		<div class="container-fluid proj-bottom">
+			<div class="row">
+
+				<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
+					<a href="{% url 'home:complaints' %}"><img src="{% static 'images/complaint.jpg' %}" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
+						<h3>Make Complaint</h3>
+					</a>
+				</div>
+				<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
+					<a href="{% url 'home:registration' %}"><img src="{% static 'images/registraion.jpeg' %}" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
+						<h3>Materials Registration</h3>
+					</a>
+				</div>
+				<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
+					<a href="{% url 'home:registerd_subject' %}"><img src="{% static 'images/registerd.jpg' %}" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
+						<h3>Registerd Subject</h3>
+					</a>
+				</div>
+
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+
+			</div>
+		</div>
+	</div>
+
+
+{% endblock body %}
